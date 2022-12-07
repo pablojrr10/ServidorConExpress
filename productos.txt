@@ -1,0 +1,38 @@
+[
+    {
+     "title": "mp3",
+     "description": "50gb",
+     "price": 2000,
+     "thumbnail": "url1",
+     "stock": 30,
+     "id": 1,
+    "code": "code1"
+    },
+    {
+     "title": "mp3",
+     "description": "50gb",
+     "price": 3000,
+     "thumbnail": "url2",
+     "stock": 30,
+     "id": 2,
+    "code": "code2"
+    },
+    {
+     "title": "mp3",
+     "description": "50gb",
+     "price": 4600,
+     "thumbnail": "url3",
+     "stock": 30,
+     "id": 3,
+    "code": "code3"
+    },
+    {
+     "title": "mp3",
+     "description": "50gb",
+     "price": 6000,
+     "thumbnail": "url4",
+     "stock": 30,
+     "id": 4,
+    "code": "code4"
+    }
+]
