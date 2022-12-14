@@ -15,7 +15,17 @@ app.get('/productos', async (req, res) => {
 	res.send(mostrarProductos);
 });
 
-app.get('/products/:pid', async (req, res) => {
-	const mostrarProductos = await productos.getById(2);
-	res.send(mostrarProductos);
+app.get('/productos/:pid', async (req, res) => {
+	const idproduct = parseInt(req.params.pid)
+	const producto = await productos.getById(idproduct)
+	if(!producto) res.send({error:"el producto no existe"})
+	else res.send({producto})
+});
+
+app.get('/', async (req, res) => {
+	let limit = parseInt(req.query.limit)
+	for(let idprod=1; idprod <= limit; idprod++){
+		const producto = await productos.getById(idprod)
+		return res.send({producto})
+	}
 });
