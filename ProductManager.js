@@ -32,6 +32,16 @@ class ProductManager {
 		}
 	};
 
+	getBylimit = async (limit) => {
+		const objs = await this.getAll();
+		try {
+			const obj = objs.find(obj => obj.id <= limit);
+			return obj ? obj : null;
+		} catch (error) {
+			console.log(error.message);
+		}
+	};
+
 	getAll = async () => {
 		try {
 			const objs = await fs.promises.readFile(this.path, this.format);

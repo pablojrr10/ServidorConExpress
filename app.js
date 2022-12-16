@@ -22,10 +22,14 @@ app.get('/productos/:pid', async (req, res) => {
 	else res.send({producto})
 });
 
-app.get('/', async (req, res) => {
-	let limit = parseInt(req.query.limit)
-	for(let idprod=1; idprod <= limit; idprod++){
-		const producto = await productos.getById(idprod)
-		return res.send({producto})
-	}
+app.get('/products', async (req, res) => {
+	const limit = parseInt(req.query.limit)
+	console.log(typeof limit)
+	const products = await productos.getAll()
+	console.log(products)
+	console.log(typeof products)
+	const nuevaLista = products.filter((products) => products.id >= 1 && products.id <=limit )
+	console.log(nuevaLista)
+
+	res.send({nuevaLista})
 });
